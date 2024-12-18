@@ -5,6 +5,11 @@ const form = document.getElementById('contactForm');
 form.addEventListener('submit', (event) => {
     event.preventDefault(); // Evita o reload da página
 
+    // Exibe uma animação de "loading"
+    const button = form.querySelector('button');
+    button.disabled = true;
+    button.innerText = "Enviando...";
+
     // Captura os dados do formulário
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
@@ -13,9 +18,14 @@ form.addEventListener('submit', (event) => {
     // Salva no localStorage
     localStorage.setItem('contactData', JSON.stringify({ name, email, message }));
 
-    // Exibe mensagem de sucesso
-    alert('Obrigado pelo contato! Seus dados foram enviados com sucesso.');
-
-    // Limpa o formulário
-    form.reset();
+    // Simula o envio de dados (aqui você pode integrar com um backend real)
+    setTimeout(() => {
+        // Exibe mensagem de sucesso
+        alert('Obrigado pelo contato! Seus dados foram enviados com sucesso.');
+        
+        // Limpa o formulário e reativa o botão
+        form.reset();
+        button.disabled = false;
+        button.innerText = "Enviar";
+    }, 2000);
 });
