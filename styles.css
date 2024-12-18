@@ -18,25 +18,29 @@
 body {
     background-color: var(--background-color);
     color: var(--text-color);
+    font-size: 16px; /* Tamanho base de fonte */
 }
 
 /* Cabeçalho */
 .site-header {
     background-color: var(--primary-color);
-    padding: 20px 0;
+    padding: 20px;
     text-align: center;
     color: white;
+    position: relative;
 }
 
 .site-header .company-name {
     font-size: 2.5em;
+    font-weight: bold;
 }
 
 .site-header .tagline {
     font-size: 1.2em;
+    margin-top: 10px;
 }
 
-/* Seção de Sobre */
+/* Seção Sobre */
 .about {
     padding: 50px 20px;
     background-color: white;
@@ -45,9 +49,11 @@ body {
 
 .about h2 {
     color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-/* Seção de Projetos */
+/* Seção Projetos */
 .projects {
     padding: 50px 20px;
     background-color: #F9F9F9;
@@ -58,12 +64,14 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    gap: 20px; /* Para separar as imagens */
 }
 
 .project-item {
     width: 45%;
     margin-bottom: 30px;
     transition: transform 0.3s ease;
+    text-align: center;
 }
 
 .project-item:hover {
@@ -73,6 +81,7 @@ body {
 .project-item img {
     width: 100%;
     height: auto;
+    border-radius: 8px;
 }
 
 .project-item h3 {
@@ -97,11 +106,13 @@ body {
     flex-direction: column;
 }
 
-.contact input, .contact textarea {
+.contact input,
+.contact textarea {
     padding: 15px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
     font-size: 1.1em;
+    border-radius: 5px;
 }
 
 .contact button {
@@ -112,6 +123,7 @@ body {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    border-radius: 5px;
 }
 
 .contact button:hover {
@@ -151,7 +163,9 @@ body {
     }
 }
 
-/* Responsividade */
+/* Responsividade para telas pequenas e médias */
+
+/* Para dispositivos maiores que 768px */
 @media (max-width: 768px) {
     .site-header .company-name {
         font-size: 2em;
@@ -171,7 +185,7 @@ body {
     }
 
     .contact form {
-        width: 90%;
+        width: 80%;
     }
 
     .contact input, .contact textarea {
@@ -180,11 +194,16 @@ body {
     }
 
     .contact button {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 }
 
+/* Para dispositivos ainda menores (celulares) */
 @media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
     .site-header .company-name {
         font-size: 1.8em;
     }
@@ -193,16 +212,23 @@ body {
         font-size: 0.9em;
     }
 
-    .contact form {
-        width: 100%;
+    .project-gallery {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .contact input, .contact textarea {
+    .project-item {
+        width: 90%;
+    }
+
+    .contact input,
+    .contact textarea {
         font-size: 0.9em;
         padding: 10px;
     }
 
     .contact button {
-        font-size: 1.1em;
+        font-size: 1em;
+        padding: 12px;
     }
 }
