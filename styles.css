@@ -6,6 +6,14 @@
     font-family: 'Arial', sans-serif;
 }
 
+/* Ajuste para a logomarca */
+.logo img {
+    max-width: 150px; /* Define a largura máxima */
+    height: auto; /* Mantém a proporção */
+    display: block; /* Centraliza dentro do container */
+    margin: 0 auto; /* Alinha horizontalmente */
+}
+
 /* Cores principais */
 :root {
     --primary-color: #2C3E50; /* Azul escuro */
