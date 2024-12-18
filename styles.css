@@ -150,3 +150,59 @@ body {
         opacity: 1;
     }
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .site-header .company-name {
+        font-size: 2em;
+    }
+
+    .site-header .tagline {
+        font-size: 1em;
+    }
+
+    .project-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-item {
+        width: 80%;
+    }
+
+    .contact form {
+        width: 90%;
+    }
+
+    .contact input, .contact textarea {
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    .contact button {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header .company-name {
+        font-size: 1.8em;
+    }
+
+    .site-header .tagline {
+        font-size: 0.9em;
+    }
+
+    .contact form {
+        width: 100%;
+    }
+
+    .contact input, .contact textarea {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    .contact button {
+        font-size: 1.1em;
+    }
+}
