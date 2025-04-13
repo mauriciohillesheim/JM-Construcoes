@@ -1,109 +1,246 @@
-/* Estilos gerais */
-body {
-    font-family: Arial, sans-serif;
+/* Estilo Global */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-h1, h2, h3 {
-    margin: 0;
-    color: #006400;
+/* Ajuste para a logomarca */
+.logo img {
+    max-width: 150px; /* Define a largura máxima */
+    height: auto; /* Mantém a proporção */
+    display: block; /* Centraliza dentro do container */
+    margin: 0 auto; /* Alinha horizontalmente */
 }
 
-p {
-    margin: 10px 0;
-    line-height: 1.6;
+/* Cores principais */
+:root {
+    --primary-color: #2C3E50; /* Azul escuro */
+    --secondary-color: #F39C12; /* Amarelo */
+    --background-color: #ECF0F1; /* Cinza claro */
+    --text-color: #34495E; /* Cinza escuro */
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+/* Corpo */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 16px; /* Tamanho base de fonte */
 }
 
 /* Cabeçalho */
 .site-header {
-    background-color: #006400;
-    color: white;
+    background-color: var(--primary-color);
+    padding: 20px;
     text-align: center;
-    padding: 20px 0;
+    color: white;
+    position: relative;
 }
 
-.logo img {
-    width: 100px;
+.site-header .company-name {
+    font-size: 2.5em;
+    font-weight: bold;
 }
 
-.company-name {
-    font-size: 2.5rem;
+.site-header .tagline {
+    font-size: 1.2em;
     margin-top: 10px;
 }
 
-.tagline {
-    font-size: 1.2rem;
-    font-style: italic;
-    margin-top: 5px;
-}
-
-/* Seção sobre */
+/* Seção Sobre */
 .about {
-    padding: 40px;
+    padding: 50px 20px;
+    background-color: white;
     text-align: center;
-    background-color: #fff;
 }
 
 .about h2 {
-    font-size: 2rem;
+    color: var(--primary-color);
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
-/* Seção de projetos */
+/* Seção Projetos */
 .projects {
-    padding: 40px;
-    background-color: #f9f9f9;
+    padding: 50px 20px;
+    background-color: #F9F9F9;
+    text-align: center;
 }
 
 .project-gallery {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    gap: 20px; /* Para separar as imagens */
 }
 
 .project-item {
     flex-basis: 90%;
     background-color: white;
-    margin: 10px;
+    margin: 10px 0 30px 10px;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
     text-align: center;
 }
 
+.project-item:hover {
+    transform: scale(1.05);
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 .project-item h3 {
-    margin-top: 15px;
-    font-size: 1.5rem;
-    color: #006400;
+    font-size: 1.5em;
+    margin: 10px 0;
 }
 
 .project-item p {
-    font-size: 1rem;
-    color: #555;
+    font-size: 1.2em;
+}
+
+/* Formulário de Contato */
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact input,
+.contact textarea {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    font-size: 1.1em;
+    border-radius: 5px;
+}
+
+.contact button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.contact button:hover {
+    background-color: #E67E22;
 }
 
 /* Rodapé */
 .site-footer {
-    background-color: #006400;
+    background-color: var(--primary-color);
     color: white;
-    padding: 20px;
     text-align: center;
+    padding: 20px 0;
 }
 
-.social-media a {
+.site-footer .social-media a {
     color: white;
+    margin: 0 10px;
     text-decoration: none;
 }
 
-.social-media a:hover {
-    text-decoration: underline;
+.site-footer .social-media a:hover {
+    color: #F39C12;
+}
+
+/* Animação de Fade-In nas imagens */
+.project-item img {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsividade para telas pequenas e médias */
+
+/* Para dispositivos maiores que 768px */
+@media (max-width: 768px) {
+    .site-header .company-name {
+        font-size: 2em;
+    }
+
+    .site-header .tagline {
+        font-size: 1em;
+    }
+
+    .project-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-item {
+        width: 80%;
+    }
+
+    .contact form {
+        width: 80%;
+    }
+
+    .contact input, .contact textarea {
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    .contact button {
+        font-size: 1.1em;
+    }
+}
+
+/* Para dispositivos ainda menores (celulares) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .site-header .company-name {
+        font-size: 1.8em;
+    }
+
+    .site-header .tagline {
+        font-size: 0.9em;
+    }
+
+    .project-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-item {
+        width: 90%;
+    }
+
+    .contact input,
+    .contact textarea {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    .contact button {
+        font-size: 1em;
+        padding: 12px;
+    }
 }
