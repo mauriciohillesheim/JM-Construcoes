@@ -1,9 +1,8 @@
-Estilo Global
-* {
+Estilo Global * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
 }
 
 /* Ajuste para a logomarca */
@@ -16,10 +15,10 @@ Estilo Global
 
 /* Cores principais */
 :root {
-    --primary-color: #2C3E50; /* Azul escuro */
-    --secondary-color: #F39C12; /* Amarelo */
-    --background-color: #ECF0F1; /* Cinza claro */
-    --text-color: #34495E; /* Cinza escuro */
+    --primary-color: #2c3e50; /* Azul escuro */
+    --secondary-color: #f39c12; /* Amarelo */
+    --background-color: #ecf0f1; /* Cinza claro */
+    --text-color: #34495e; /* Cinza escuro */
 }
 
 /* Corpo */
@@ -64,7 +63,7 @@ body {
 /* Seção Projetos */
 .projects {
     padding: 50px 20px;
-    background-color: #F9F9F9;
+    background-color: #f9f9f9;
     text-align: center;
 }
 
@@ -139,7 +138,7 @@ body {
 }
 
 .contact button:hover {
-    background-color: #E67E22;
+    background-color: #e67e22;
 }
 
 /* Rodapé */
@@ -157,7 +156,7 @@ body {
 }
 
 .site-footer .social-media a:hover {
-    color: #F39C12;
+    color: #f39c12;
 }
 
 /* Animação de Fade-In nas imagens */
@@ -200,7 +199,8 @@ body {
         width: 80%;
     }
 
-    .contact input, .contact textarea {
+    .contact input,
+    .contact textarea {
         font-size: 1em;
         padding: 12px;
     }
